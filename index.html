@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="Accrochage"/>
+<meta name="theme-color" content="#ffffff"/>
+<link rel="apple-touch-icon" href="data:image/png;base64,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PC8HHXv5X888uw0ADOd3337vOgM65AQAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAFCAAAAAAQAECAAAAABQgAAAAAEABAgAAAAAUIAAAAABAAQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACM7v8BTUffjJv2ovIAAAAASUVORK5CYII="/>
+<title>Accrochage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #f5f4f0;
+    --surface: #ffffff;
+    --border: rgba(0,0,0,0.1);
+    --border-strong: rgba(0,0,0,0.18);
+    --text: #1a1a18;
+    --muted: #888780;
+    --accent: #1a1a18;
+    --accent-fg: #ffffff;
+    --green: #1D9E75;
+    --radius: 14px;
+    --radius-sm: 8px;
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a18;
+      --surface: #242422;
+      --border: rgba(255,255,255,0.08);
+      --border-strong: rgba(255,255,255,0.15);
+      --text: #f0ede8;
+      --muted: #888780;
+      --accent: #f0ede8;
+      --accent-fg: #1a1a18;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body { height: 100%; overflow: hidden; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--safe-top);
+    padding-bottom: var(--safe-bottom);
+  }
+
+  /* Header */
+  .header {
+    background: var(--surface);
+    border-bottom: 0.5px solid var(--border);
+    padding: 16px 20px 12px;
+    flex-shrink: 0;
+  }
+  .header h1 { font-size: 22px; font-weight: 500; letter-spacing: -0.4px; }
+  .header p { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    background: var(--surface);
+    border-bottom: 0.5px solid var(--border);
+    flex-shrink: 0;
+  }
+  .tab {
+    flex: 1; padding: 11px 4px; text-align: center;
+    font-size: 13px; font-family: 'DM Sans', sans-serif;
+    color: var(--muted); cursor: pointer;
+    border-bottom: 2px solid transparent;
+    background: none; border-top: none; border-left: none; border-right: none;
+    transition: color 0.15s;
+  }
+  .tab.active { color: var(--text); border-bottom-color: var(--text); font-weight: 500; }
+
+  /* Scroll area */
+  .scroll {
+    flex: 1; overflow-y: auto; padding: 14px 16px 24px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    border: 0.5px solid var(--border);
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .card-title {
+    font-size: 11px; font-weight: 500; color: var(--muted);
+    letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px;
+  }
+
+  /* Fields */
+  .field { margin-bottom: 10px; }
+  .field:last-child { margin-bottom: 0; }
+  .field label { font-size: 13px; color: var(--muted); display: block; margin-bottom: 5px; }
+  .field-row { display: flex; gap: 8px; align-items: center; }
+  .field-row input {
+    flex: 1; height: 40px;
+    border-radius: var(--radius-sm);
+    border: 0.5px solid var(--border-strong);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px; /* prevent iOS zoom */
+    padding: 0 12px;
+    font-family: 'DM Sans', sans-serif;
+    appearance: none; -webkit-appearance: none;
+  }
+  .field-row input:focus { outline: none; border-color: var(--text); }
+  .unit { font-size: 13px; color: var(--muted); white-space: nowrap; }
+
+  /* Segment control */
+  .seg {
+    display: flex;
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    border: 0.5px solid var(--border);
+    padding: 2px; gap: 2px;
+    margin-bottom: 10px;
+  }
+  .seg-btn {
+    flex: 1; padding: 7px 2px; text-align: center;
+    font-size: 12px; color: var(--muted);
+    cursor: pointer; background: transparent; border: none;
+    border-radius: 6px; font-family: 'DM Sans', sans-serif;
+    transition: all 0.15s;
+  }
+  .seg-btn.active {
+    background: var(--surface); color: var(--text);
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+
+  /* Button */
+  .btn-calc {
+    width: 100%; height: 48px;
+    border-radius: var(--radius);
+    background: var(--accent); color: var(--accent-fg);
+    font-size: 15px; font-weight: 500;
+    border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    margin-top: 4px;
+    transition: opacity 0.15s, transform 0.1s;
+  }
+  .btn-calc:active { opacity: 0.85; transform: scale(0.99); }
+
+  /* Results */
+  .result-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    border: 0.5px solid var(--border);
+    padding: 16px;
+    margin-top: 10px;
+    display: none;
+    animation: fadeIn 0.2s ease;
+  }
+  .result-card.show { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+  .result-hero { text-align: center; padding: 14px 0 16px; }
+  .result-hero .label { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+  .result-hero .value { font-size: 48px; font-weight: 500; letter-spacing: -2px; line-height: 1.1; margin: 6px 0 2px; }
+  .result-hero .sub { font-size: 14px; color: var(--muted); }
+
+  hr.div { border: none; border-top: 0.5px solid var(--border); margin: 12px 0; }
+  .result-row { display: flex; justify-content: space-between; padding: 5px 0; font-size: 14px; }
+  .result-row span:first-child { color: var(--muted); }
+  .result-row span:last-child { font-weight: 500; }
+
+  /* Schema */
+  .schema { background: var(--bg); border-radius: var(--radius-sm); padding: 12px 8px; margin-top: 12px; }
+
+  /* Multi frames */
+  .frame-input-row { display: flex; gap: 6px; align-items: center; margin-bottom: 8px; width: 100%; min-width: 0; }
+  .frame-num {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: var(--bg); border: 0.5px solid var(--border-strong);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; color: var(--muted); flex-shrink: 0;
+  }
+  .frame-input-row input {
+    flex: 1; min-width: 0; width: 0; height: 38px;
+    border-radius: var(--radius-sm); border: 0.5px solid var(--border-strong);
+    background: var(--bg); color: var(--text);
+    font-size: 16px; padding: 0 10px; font-family: 'DM Sans', sans-serif;
+    appearance: none; -webkit-appearance: none;
+  }
+  .frame-input-row input:focus { outline: none; border-color: var(--text); }
+
+  .btn-add {
+    width: 100%; height: 36px;
+    border-radius: var(--radius-sm);
+    border: 0.5px solid var(--border-strong);
+    background: transparent; color: var(--muted);
+    font-size: 13px; cursor: pointer;
+    font-family: 'DM Sans', sans-serif; margin-top: 2px;
+  }
+
+  .multi-result {
+    background: var(--surface); border-radius: var(--radius);
+    border: 0.5px solid var(--border); padding: 14px 16px;
+    margin-top: 10px; display: none; animation: fadeIn 0.2s ease;
+  }
+  .multi-result.show { display: block; }
+  .frame-result-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 9px 0; border-bottom: 0.5px solid var(--border);
+    font-size: 14px;
+  }
+  .frame-result-row:last-child { border-bottom: none; }
+  .frame-tag {
+    background: var(--bg); border-radius: 5px;
+    padding: 2px 7px; font-size: 11px; color: var(--muted); margin-left: 6px;
+  }
+
+  .hidden { display: none !important; }
+  .copyright { text-align: right; padding: 14px 0 20px; font-size: 11px; color: var(--muted); letter-spacing: 0.03em; opacity: 0.6; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Accrochage</h1>
+  <p>Hauteur des clous au millimètre près</p>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('solo')">Tableau seul</button>
+  <button class="tab" onclick="switchTab('multi')">Alignement</button>
+  <button class="tab" onclick="switchTab('grid')">Grille</button>
+</div>
+
+<!-- SOLO TAB -->
+<div class="scroll" id="tab-solo">
+
+  <div class="card">
+    <div class="card-title">Dimensions du tableau</div>
+    <div class="field">
+      <label>Hauteur du cadre</label>
+      <div class="field-row">
+        <input type="number" id="s-hauteur" inputmode="decimal" placeholder="60"/>
+        <span class="unit">cm</span>
+      </div>
+    </div>
+    <div class="field">
+      <label>Largeur du cadre</label>
+      <div class="field-row">
+        <input type="number" id="s-largeur" inputmode="decimal" placeholder="40"/>
+        <span class="unit">cm</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Système d'accroche</div>
+    <div class="field">
+      <label>Distance depuis le haut du cadre</label>
+      <div class="field-row">
+        <input type="number" id="s-accroche" inputmode="decimal" placeholder="5"/>
+        <span class="unit">cm</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Position souhaitée</div>
+    <div class="seg" id="ref-seg">
+      <button class="seg-btn active" onclick="setRef(this,'centre')">Axe central</button>
+      <button class="seg-btn" onclick="setRef(this,'haut')">Haut du cadre</button>
+      <button class="seg-btn" onclick="setRef(this,'bas')">Bas du cadre</button>
+    </div>
+    <div class="field">
+      <label id="ref-label">Hauteur de l'axe central depuis le sol</label>
+      <div class="field-row">
+        <input type="number" id="s-ref" inputmode="decimal" placeholder="150" value="150"/>
+        <span class="unit">cm</span>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn-calc" onclick="calcSolo()">Calculer</button>
+
+  <div class="result-card" id="solo-result">
+    <div class="result-hero">
+      <div class="label">Planter le clou à</div>
+      <div class="value" id="r-clou">—</div>
+      <div class="sub">cm depuis le sol</div>
+    </div>
+    <hr class="div"/>
+    <div class="result-row"><span>Axe central</span><span id="r-centre">—</span></div>
+    <div class="result-row"><span>Haut du cadre</span><span id="r-haut">—</span></div>
+    <div class="result-row"><span>Bas du cadre</span><span id="r-bas">—</span></div>
+    <div class="schema" id="solo-schema"></div>
+  </div>
+
+  <div class="copyright">v.0.4 &nbsp;© Jehan de B. 2026</div>
+
+</div>
+
+<!-- MULTI TAB -->
+<div class="scroll hidden" id="tab-multi">
+
+  <div class="card">
+    <div class="card-title">Tableaux à aligner</div>
+    <div style="display:flex;gap:6px;margin-bottom:6px;">
+      <span style="flex:1;font-size:11px;color:var(--muted);padding-left:30px;">Hauteur (cm)</span>
+      <span style="flex:1;font-size:11px;color:var(--muted);">Accroche (cm)</span>
+    </div>
+    <div id="frames-list">
+      <div class="frame-input-row">
+        <div class="frame-num">1</div>
+        <input type="number" inputmode="decimal" placeholder="H cadre" class="fh"/>
+        <input type="number" inputmode="decimal" placeholder="Dist. accroche" class="fa"/>
+      </div>
+      <div class="frame-input-row">
+        <div class="frame-num">2</div>
+        <input type="number" inputmode="decimal" placeholder="H cadre" class="fh"/>
+        <input type="number" inputmode="decimal" placeholder="Dist. accroche" class="fa"/>
+      </div>
+    </div>
+    <button class="btn-add" onclick="addFrame()">+ Ajouter un tableau</button>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Type d'alignement</div>
+    <div class="seg">
+      <button class="seg-btn active" onclick="setAlign(this,'milieu')">Milieu</button>
+      <button class="seg-btn" onclick="setAlign(this,'haut')">Haut</button>
+      <button class="seg-btn" onclick="setAlign(this,'bas')">Bas</button>
+    </div>
+    <div class="field">
+      <label id="align-label">Hauteur de l'axe médian depuis le sol</label>
+      <div class="field-row">
+        <input type="number" id="m-ref" inputmode="decimal" placeholder="150" value="150"/>
+        <span class="unit">cm</span>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn-calc" onclick="calcMulti()">Calculer</button>
+
+  <div class="multi-result" id="multi-result">
+    <div class="card-title" style="margin-bottom:10px;">Position des clous</div>
+    <div id="multi-rows"></div>
+  </div>
+
+  <div class="copyright">v.0.4 &nbsp;© Jehan de B. 2026</div>
+
+</div>
+
+<!-- GRID TAB -->
+<div class="scroll hidden" id="tab-grid">
+
+  <div class="card">
+    <div class="card-title">Dimensions des tableaux</div>
+    <div class="field">
+      <label>Hauteur du cadre</label>
+      <div class="field-row">
+        <input type="number" id="g-hauteur" inputmode="decimal" placeholder="30"/>
+        <span class="unit">cm</span>
+      </div>
+    </div>
+    <div class="field">
+      <label>Largeur du cadre</label>
+      <div class="field-row">
+        <input type="number" id="g-largeur" inputmode="decimal" placeholder="30"/>
+        <span class="unit">cm</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Système d'accroche</div>
+    <div class="field">
+      <label>Distance depuis le haut du cadre</label>
+      <div class="field-row">
+        <input type="number" id="g-accroche" inputmode="decimal" placeholder="3"/>
+        <span class="unit">cm</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Disposition</div>
+    <div style="display:flex;gap:8px;margin-bottom:10px;">
+      <div class="field" style="flex:1;min-width:0;margin-bottom:0;">
+        <label>Lignes</label>
+        <div class="field-row">
+          <input type="number" id="g-rows" inputmode="numeric" placeholder="2" value="2" style="min-width:0;width:0;"/>
+        </div>
+      </div>
+      <div class="field" style="flex:1;min-width:0;margin-bottom:0;">
+        <label>Colonnes</label>
+        <div class="field-row">
+          <input type="number" id="g-cols" inputmode="numeric" placeholder="3" value="3" style="min-width:0;width:0;"/>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;">
+      <div class="field" style="flex:1;min-width:0;margin-bottom:0;">
+        <label>Espace horizontal</label>
+        <div class="field-row">
+          <input type="number" id="g-gapx" inputmode="decimal" placeholder="5" value="5" style="min-width:0;width:0;"/>
+          <span class="unit">cm</span>
+        </div>
+      </div>
+      <div class="field" style="flex:1;min-width:0;margin-bottom:0;">
+        <label>Espace vertical</label>
+        <div class="field-row">
+          <input type="number" id="g-gapy" inputmode="decimal" placeholder="5" value="5" style="min-width:0;width:0;"/>
+          <span class="unit">cm</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Position souhaitée</div>
+    <div class="seg" id="grid-seg">
+      <button class="seg-btn active" onclick="setGridAlign(this,'milieu')">Milieu</button>
+      <button class="seg-btn" onclick="setGridAlign(this,'haut')">Haut</button>
+      <button class="seg-btn" onclick="setGridAlign(this,'bas')">Bas</button>
+    </div>
+    <div class="field">
+      <label id="grid-align-label">Hauteur du centre de la grille depuis le sol</label>
+      <div class="field-row">
+        <input type="number" id="g-ref" inputmode="decimal" placeholder="150" value="150"/>
+        <span class="unit">cm</span>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn-calc" onclick="calcGrid()">Calculer</button>
+
+  <div class="multi-result" id="grid-result">
+    <div class="card-title" style="margin-bottom:10px;">Position des clous</div>
+    <div class="schema" id="grid-schema"></div>
+    <hr class="div"/>
+    <div id="grid-rows"></div>
+    <hr class="div"/>
+    <div class="result-row"><span>Pas horizontal entre clous</span><span id="grid-pitch">—</span></div>
+    <div class="result-row"><span>Dimensions de la grille</span><span id="grid-dims">—</span></div>
+  </div>
+
+  <div class="copyright">v.0.4 &nbsp;© Jehan de B. 2026</div>
+
+</div>
+
+<script>
+let soloRef = 'centre';
+let alignMode = 'milieu';
+let gridAlign = 'milieu';
+
+function switchTab(t) {
+  const tabs = ['solo', 'multi', 'grid'];
+  tabs.forEach(name => {
+    document.getElementById('tab-' + name).classList.toggle('hidden', name !== t);
+  });
+  document.querySelectorAll('.tab').forEach((el, i) => {
+    el.classList.toggle('active', tabs[i] === t);
+  });
+}
+
+function setRef(btn, ref) {
+  soloRef = ref;
+  document.querySelectorAll('#ref-seg .seg-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const map = {
+    centre: "Hauteur de l'axe central depuis le sol",
+    haut: "Hauteur du haut du cadre depuis le sol",
+    bas: "Hauteur du bas du cadre depuis le sol"
+  };
+  document.getElementById('ref-label').textContent = map[ref];
+}
+
+function setAlign(btn, mode) {
+  alignMode = mode;
+  btn.parentElement.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const map = {
+    milieu: "Hauteur de l'axe médian depuis le sol",
+    haut: "Hauteur du haut des cadres depuis le sol",
+    bas: "Hauteur du bas des cadres depuis le sol"
+  };
+  document.getElementById('align-label').textContent = map[mode];
+}
+
+function calcSolo() {
+  const h = parseFloat(document.getElementById('s-hauteur').value);
+  const acc = parseFloat(document.getElementById('s-accroche').value);
+  const ref = parseFloat(document.getElementById('s-ref').value);
+  if (isNaN(h) || isNaN(acc) || isNaN(ref)) { alert('Veuillez remplir tous les champs.'); return; }
+
+  let centreH;
+  if (soloRef === 'centre') centreH = ref;
+  else if (soloRef === 'haut') centreH = ref - h / 2;
+  else centreH = ref + h / 2;
+
+  const hautH = centreH + h / 2;
+  const basH = centreH - h / 2;
+  const clou = hautH - acc;
+
+  document.getElementById('r-clou').textContent = clou.toFixed(1);
+  document.getElementById('r-centre').textContent = centreH.toFixed(1) + ' cm';
+  document.getElementById('r-haut').textContent = hautH.toFixed(1) + ' cm';
+  document.getElementById('r-bas').textContent = basH.toFixed(1) + ' cm';
+  document.getElementById('solo-result').classList.add('show');
+  drawSchema(h, acc, clou, hautH, basH, centreH);
+}
+
+function drawSchema(h, acc, clou, hautH, basH, centreH) {
+  const maxH = 120;
+  const scale = Math.min(maxH / h, 2.5);
+  const fH = Math.round(h * scale);
+  const svgH = fH + 70;
+  const fW = 80;
+  const topY = 30;
+  const clouY = topY + Math.round(acc * scale);
+
+  document.getElementById('solo-schema').innerHTML = `
+    <svg width="100%" viewBox="0 0 220 ${svgH}" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+      <rect x="70" y="${topY}" width="${fW}" height="${fH}" rx="3"
+        fill="none" stroke="var(--border-strong)" stroke-width="1.5"/>
+      <line x1="110" y1="${topY}" x2="110" y2="${clouY}"
+        stroke="var(--muted)" stroke-width="1" stroke-dasharray="3,2"/>
+      <circle cx="110" cy="${clouY}" r="5" fill="var(--text)"/>
+      <text x="120" y="${Math.max(clouY + 5, topY + 16)}" font-size="11"
+        fill="var(--text)" font-family="'DM Sans',sans-serif" font-weight="500">${clou.toFixed(1)} cm</text>
+      <line x1="158" y1="${topY}" x2="162" y2="${topY}"
+        stroke="var(--muted)" stroke-width="1"/>
+      <text x="165" y="${topY + 4}" font-size="10"
+        fill="var(--muted)" font-family="'DM Sans',sans-serif">${hautH.toFixed(1)}</text>
+      <line x1="158" y1="${topY + fH}" x2="162" y2="${topY + fH}"
+        stroke="var(--muted)" stroke-width="1"/>
+      <text x="165" y="${topY + fH + 4}" font-size="10"
+        fill="var(--muted)" font-family="'DM Sans',sans-serif">${basH.toFixed(1)}</text>
+      <line x1="158" y1="${topY}" x2="158" y2="${topY + fH}"
+        stroke="var(--border-strong)" stroke-width="0.5"/>
+    </svg>`;
+}
+
+function addFrame() {
+  const list = document.getElementById('frames-list');
+  const n = list.children.length + 1;
+  const row = document.createElement('div');
+  row.className = 'frame-input-row';
+  row.innerHTML = `<div class="frame-num">${n}</div>
+    <input type="number" inputmode="decimal" placeholder="H cadre" class="fh"/>
+    <input type="number" inputmode="decimal" placeholder="Dist. accroche" class="fa"/>`;
+  list.appendChild(row);
+}
+
+function calcMulti() {
+  const fhs = document.querySelectorAll('.fh');
+  const fas = document.querySelectorAll('.fa');
+  const refVal = parseFloat(document.getElementById('m-ref').value);
+  if (isNaN(refVal)) { alert('Indiquez la hauteur de référence.'); return; }
+
+  const rows = [];
+  for (let i = 0; i < fhs.length; i++) {
+    const h = parseFloat(fhs[i].value);
+    const a = parseFloat(fas[i].value);
+    if (!isNaN(h) && !isNaN(a)) rows.push({ h, a, n: i + 1 });
+  }
+  if (rows.length === 0) { alert('Entrez au moins un tableau.'); return; }
+
+  const container = document.getElementById('multi-rows');
+  container.innerHTML = '';
+  rows.forEach(f => {
+    let centreH;
+    if (alignMode === 'milieu') centreH = refVal;
+    else if (alignMode === 'haut') centreH = refVal - f.h / 2;
+    else centreH = refVal + f.h / 2;
+
+    const clou = (centreH + f.h / 2) - f.a;
+    const div = document.createElement('div');
+    div.className = 'frame-result-row';
+    div.innerHTML = `<span>Tableau ${f.n}<span class="frame-tag">${f.h} cm</span></span>
+      <span style="font-weight:500;">${clou.toFixed(1)} cm</span>`;
+    container.appendChild(div);
+  });
+
+  document.getElementById('multi-result').classList.add('show');
+}
+
+function setGridAlign(btn, mode) {
+  gridAlign = mode;
+  btn.parentElement.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const map = {
+    milieu: "Hauteur du centre de la grille depuis le sol",
+    haut: "Hauteur du haut de la grille depuis le sol",
+    bas: "Hauteur du bas de la grille depuis le sol"
+  };
+  document.getElementById('grid-align-label').textContent = map[mode];
+}
+
+function calcGrid() {
+  const h = parseFloat(document.getElementById('g-hauteur').value);
+  const w = parseFloat(document.getElementById('g-largeur').value);
+  const acc = parseFloat(document.getElementById('g-accroche').value);
+  const rows = parseInt(document.getElementById('g-rows').value, 10);
+  const cols = parseInt(document.getElementById('g-cols').value, 10);
+  const gx = parseFloat(document.getElementById('g-gapx').value);
+  const gy = parseFloat(document.getElementById('g-gapy').value);
+  const ref = parseFloat(document.getElementById('g-ref').value);
+
+  if (isNaN(h) || isNaN(w) || isNaN(acc) || isNaN(rows) || isNaN(cols)
+      || isNaN(gx) || isNaN(gy) || isNaN(ref)) {
+    alert('Veuillez remplir tous les champs.'); return;
+  }
+  if (rows < 1 || cols < 1) {
+    alert('Lignes et colonnes doivent être au moins 1.'); return;
+  }
+
+  const totalH = rows * h + (rows - 1) * gy;
+  const totalW = cols * w + (cols - 1) * gx;
+
+  let centerH;
+  if (gridAlign === 'milieu') centerH = ref;
+  else if (gridAlign === 'haut') centerH = ref - totalH / 2;
+  else centerH = ref + totalH / 2;
+
+  const topGrid = centerH + totalH / 2;
+  const nailHeights = [];
+  for (let r = 0; r < rows; r++) {
+    const rowTop = topGrid - r * (h + gy);
+    nailHeights.push(rowTop - acc);
+  }
+
+  const hPitch = w + gx;
+
+  const container = document.getElementById('grid-rows');
+  container.innerHTML = '';
+  nailHeights.forEach((nh, i) => {
+    const div = document.createElement('div');
+    div.className = 'frame-result-row';
+    div.innerHTML = `<span>Ligne ${i + 1}<span class="frame-tag">${cols} clou${cols > 1 ? 's' : ''}</span></span>
+      <span style="font-weight:500;">${nh.toFixed(1)} cm</span>`;
+    container.appendChild(div);
+  });
+
+  document.getElementById('grid-pitch').textContent = hPitch.toFixed(1) + ' cm';
+  document.getElementById('grid-dims').textContent = totalW.toFixed(1) + ' × ' + totalH.toFixed(1) + ' cm';
+
+  drawGridSchema(h, w, rows, cols, gx, gy, acc);
+  document.getElementById('grid-result').classList.add('show');
+}
+
+function drawGridSchema(h, w, rows, cols, gx, gy, acc) {
+  const viewW = 220;
+  const padX = 12, padY = 14;
+  const availW = viewW - 2 * padX;
+  const maxDrawH = 170;
+
+  const totalH = rows * h + (rows - 1) * gy;
+  const totalW = cols * w + (cols - 1) * gx;
+  const scale = Math.min(availW / totalW, maxDrawH / totalH);
+
+  const drawW = totalW * scale;
+  const drawH = totalH * scale;
+  const offsetX = (viewW - drawW) / 2;
+  const offsetY = padY;
+  const svgH = drawH + 2 * padY;
+
+  let elements = '';
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const x = offsetX + c * (w + gx) * scale;
+      const y = offsetY + r * (h + gy) * scale;
+      const fw = w * scale;
+      const fh = h * scale;
+      elements += `<rect x="${x.toFixed(2)}" y="${y.toFixed(2)}" width="${fw.toFixed(2)}" height="${fh.toFixed(2)}" rx="2"
+        fill="none" stroke="var(--border-strong)" stroke-width="1.2"/>`;
+      const nailX = x + fw / 2;
+      const nailY = y + acc * scale;
+      elements += `<circle cx="${nailX.toFixed(2)}" cy="${nailY.toFixed(2)}" r="2.5" fill="var(--text)"/>`;
+    }
+  }
+
+  document.getElementById('grid-schema').innerHTML = `
+    <svg width="100%" viewBox="0 0 ${viewW} ${svgH.toFixed(2)}" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+      ${elements}
+    </svg>`;
+}
+</script>
+</body>
+</html>
